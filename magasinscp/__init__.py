@@ -55,9 +55,9 @@ admin = Admin(
 from magasinscp.models import User, Item, PurchasedItems
 
 
-admin.add_view(UserModelView(User, db.session))
-admin.add_view(ItemModelView(Item, db.session))
-admin.add_view(PurchasedItemsModelView(PurchasedItems, db.session))
+admin.add_view(UserModelView(User, db.session, "Utilisateurs"))
+admin.add_view(ItemModelView(Item, db.session, "Items"))
+admin.add_view(PurchasedItemsModelView(PurchasedItems, db.session, "Items achetés"))
 admin.add_view(HomePageView(name="Retourner vers la page principale"))
 
 
