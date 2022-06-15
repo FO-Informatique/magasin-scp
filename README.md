@@ -29,5 +29,4 @@ MESSAGE_SENDER_EMAIL_ADDRESS=
 MESSAGE_SENDER_PASSWORD=
 STAFF_EMAIL_ADDRESS=
 ```
-7. Add a git remote named `upstream` with the SSH link from the main repository from the Fo-Informatique organization
-
+7. Add a git remote named `upstream` with the SSH link from the [main repository](https://github.com/FO-Informatique/magasin-scp)

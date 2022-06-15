@@ -1,12 +1,11 @@
 import os
 from dotenv import load_dotenv
-from flask import Flask
+from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_admin import Admin
 from flask_mail import Mail
-
 
 load_dotenv()
 
@@ -55,9 +54,9 @@ admin = Admin(
 from magasinscp.models import User, Item, PurchasedItems
 
 
-admin.add_view(UserModelView(User, db.session, "Utilisateurs"))
-admin.add_view(ItemModelView(Item, db.session, "Items"))
-admin.add_view(PurchasedItemsModelView(PurchasedItems, db.session, "Items achetés"))
+admin.add_view(UserModelView(User, db.session, name="Utilisateurs"))
+admin.add_view(ItemModelView(Item, db.session, name="Items"))
+admin.add_view(PurchasedItemsModelView(PurchasedItems, db.session, name="Commandes"))
 admin.add_view(HomePageView(name="Retourner vers la page principale"))
 
 

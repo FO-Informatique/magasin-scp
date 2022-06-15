@@ -15,12 +15,23 @@ class MyAdminIndexView(AdminIndexView):
         if current_user.admin == True:
             return current_user.is_authenticated
 
+    def is_visible(self):
+        return False
+
 
 class UserModelView(ModelView):
     def is_accessible(self):
         if current_user.admin == True:
             return current_user.is_authenticated
 
+    column_labels = dict(
+        first_name="Prénom",
+        last_name="Dernier Nom",
+        email="Addresse Courriel",
+        admin="Administrateur",
+        email_confirmed="Addresse Courriel confirmée",
+        stamps="Étampe",
+    )
     can_create = False
     column_exclude_list = "password"
     form_excluded_columns = ["password", "email_confirmed"]
@@ -31,8 +42,18 @@ class ItemModelView(ModelView):
         if current_user.admin == True:
             return current_user.is_authenticated
 
+    column_labels = dict(
+        product_name="Item",
+        price="Prix",
+    )
+
 
 class PurchasedItemsModelView(ModelView):
     def is_accessible(self):
         if current_user.admin == True:
             return current_user.is_authenticated
+
+    column_labels = dict(
+        product_name="Item",
+        price="Prix",
+    )
