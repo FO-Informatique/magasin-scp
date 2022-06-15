@@ -12,3 +12,22 @@ Our main technologies that we used were HTML, Bootstrap, Flask and SQLite. Our b
 2. Login to your account to view the amount of stamps you have
 3. Purchase any rewards that you want based on your balance
 4. Logout when you are finished
+
+## Project configuration
+
+NOTE: if you are using Docker, you can skip step 3 and 4 in favor of runnning `docker compose up` to test the web app in a Docker container.
+
+1. Fork this project and git clone it to your machine
+2. Move the repository to your preferred location
+3. Create a python virtual environment and activate it
+4. Install dependencies from the requirements.txt file
+5. Make sure your Python formatter is set to `Black` and that `format on save` is turned on
+6. Create a `.env` file inside the `magasinscp` package with the following variables and fill the values in
+```
+KEY=
+MESSAGE_SENDER_EMAIL_ADDRESS=
+MESSAGE_SENDER_PASSWORD=
+STAFF_EMAIL_ADDRESS=
+```
+7. Add a git remote named `upstream` with the SSH link from the main repository from the Fo-Informatique organization
+
